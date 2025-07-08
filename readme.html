@@ -1,38 +1,122 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>README</title>
-  <link rel="stylesheet" href="style.css">
+  <title>null.postsign</title>
+  <style>
+    body {
+      background: black;
+      color: #00ff00;
+      font-family: monospace;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #terminal {
+      max-width: 800px;
+      white-space: pre-wrap;
+    }
+    .cursor {
+      display: inline-block;
+      background: #00ff00;
+      width: 10px;
+      height: 18px;
+      margin-left: 3px;
+      animation: blink 1s steps(1) infinite;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-  <div class="terminal">
-    <pre id="manifest"></pre>
-  </div>
+  <div id="terminal"></div>
   <script>
-    const text = `// Manifesto [null.postsign]
-let signal = undefined;
-let sign = corrupt;
-let author = dissolve();
-let protocol = rebuild();
+    const manifest = `// null.postsign — m-a-n-i-f-e-s-t
 
-if (meaning == denied) {
-    transmit(noise);
-} else {
-    hack(sign);
-}
+>> SYSTEM.INIT
+>> identity: [redacted]
+>> interface: anonymous / recursive / non-retinal
+>> boot_mode: glitch + entropy
 
-// No logo. No brand. No message.
-return null;`;
+:: premise:
+    art != product
+    art != decoration
+    art == remainder
+    art == broken protocol of presence
+
+:: rejection:
+    !beauty_as_commodity
+    !narrative_as_control
+    !brand_as_self
+
+:: operation:
+    use_material("trash", "ink", "residue")
+    refuse("polish", "institutional_sheen", "clean surfaces")
+
+:: aesthetics:
+    if (image == complete) -> corrupt()
+    if (language == stable) -> fragment()
+    if (sign == centered) -> disperse()
+
+:: method:
+    write() == bleed()
+    draw() == fail_gracefully()
+    publish() == dissolve()
+
+:: meta-logic:
+    presence == residual
+    meaning == unstable
+    author == placeholder
+    viewer == potential glitch
+
+:: signature:
+    [NEVER]
+    → not brand
+    → not person
+    → not name
+    = ∴ residue in system memory
+
+:: goal:
+    to leave no product,
+    only looped log of recursive decay
+
+>> END_TRANSMISSION`;
+
+    const terminal = document.getElementById("terminal");
+
+    const lines = manifest.split("\n");
     let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("manifest").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 30);
+
+    function typeLine() {
+      if (i < lines.length) {
+        const line = document.createElement("div");
+        terminal.appendChild(line);
+        let j = 0;
+        function typeChar() {
+          if (j <= lines[i].length) {
+            line.textContent = lines[i].substring(0, j);
+            j++;
+            setTimeout(typeChar, 10);
+          } else {
+            i++;
+            setTimeout(typeLine, 150);
+          }
+        }
+        typeChar();
+      } else {
+        const cursor = document.createElement("span");
+        cursor.className = "cursor";
+        terminal.appendChild(cursor);
       }
     }
-    typeWriter();
+
+    typeLine();
   </script>
 </body>
 </html>
