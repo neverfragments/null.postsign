@@ -2,54 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Manifest</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>README Manifest</title>
   <style>
-    #manifest {
-      white-space: pre-wrap;
-      color: white;
+    body {
+      background: black;
+      color: #00ff00;
       font-family: monospace;
-      max-width: 800px;
+      padding: 2em;
+      white-space: pre-wrap;
+    }
+    #output {
+      white-space: pre-wrap;
     }
   </style>
 </head>
 <body>
-  <div id="manifest"></div>
+  <div id="output"></div>
   <script>
     const text = `// null.postsign manifesto
-const subject = null
-const sign = undefined
-const origin = fragmented
-
-function intention(sign) {
-  return void 0
+function identity() {
+  let signal = "fragmented";
+  let structure = "erased";
+  let meaning = "shifted";
+  return signal + structure + meaning;
 }
 
-let message = []
-
-while(true) {
-  message.push(random_noise())
-  if (entropy > order) break
+// The sign is noise
+const message = identity();
+if (message.includes("noise")) {
+  console.log("Decode failure");
+} else {
+  console.log("Read as void");
 }
 
-console.log("We do not decode. We disrupt.")
-console.log("We do not build systems. We dissolve them.")
-console.log("Meaning is residual. What remains is the trace.")`;
-
+// end.`;
     let i = 0;
-    const speed = 20;
-    const target = document.getElementById("manifest");
+    const output = document.getElementById("output");
 
-    function type() {
+    function typeChar() {
       if (i < text.length) {
-        target.textContent += text.charAt(i);
+        output.textContent += text.charAt(i);
         i++;
-        setTimeout(type, speed);
+        setTimeout(typeChar, 20);
       }
     }
-
-    type();
+    typeChar();
   </script>
 </body>
 </html>

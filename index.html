@@ -4,17 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>null.postsign</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #terminal {
+      white-space: pre-wrap;
+    }
+    .input-line::before {
+      content: '> ';
+      color: #00ff00;
+    }
+    .error {
+      color: red;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #00ff00;
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      50% { background-color: transparent; }
+    }
+  </style>
 </head>
 <body>
-  <div class="terminal">
-    <div class="logo">null.postsign</div>
-    <div id="output"></div>
-    <div class="input-line">
-      <span class="prompt">&gt;</span>
-      <input type="text" id="commandInput" autofocus />
-    </div>
+  <div id="terminal">
+    <div>null.postsign</div>
+    <div class="input-line" id="prompt"></div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    const prompt = document.getElementById("prompt");
+    const terminal = document.getElementById("terminal");
+    let input = "";
+    const cursor = document.createElement("span");
+    cursor.className = "cursor";
+    prompt.appendChild(cursor);
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        cursor.remove();
+        const newLine = document.createElement("div");
+        newLine.textContent = "> " + input;
+        terminal.appendChild(newLine);
+        if (input.trim().toLowerCase() === "readme") {
+          window.location.href = "readme.html";
+        } else {
+          const error = document.createElement("div");
+          error.className = "error";
+          error.textContent = "Unknown command: " + input;
+          terminal.appendChild(error);
+        }
+        input = "";
+        const newPrompt = document.createElement("div");
+        newPrompt.className = "input-line";
+        newPrompt.id = "prompt";
+        terminal.appendChild(newPrompt);
+        newPrompt.appendChild(cursor);
+      } else if (event.key.length === 1) {
+        input += event.key;
+        prompt.insertBefore(document.createTextNode(event.key), cursor);
+      } else if (event.key === "Backspace") {
+        input = input.slice(0, -1);
+        if (prompt.childNodes.length > 1) {
+          prompt.removeChild(prompt.childNodes[prompt.childNodes.length - 2]);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
