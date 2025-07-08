@@ -1,52 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>README Manifest</title>
-  <style>
-    body {
-      background: black;
-      color: #00ff00;
-      font-family: monospace;
-      padding: 2em;
-      white-space: pre-wrap;
-    }
-    #output {
-      white-space: pre-wrap;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>README</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="output"></div>
+  <div class="terminal">
+    <pre id="manifest"></pre>
+  </div>
   <script>
-    const text = `// null.postsign manifesto
-function identity() {
-  let signal = "fragmented";
-  let structure = "erased";
-  let meaning = "shifted";
-  return signal + structure + meaning;
-}
+    const text = `// Manifesto [null.postsign]
+let signal = undefined;
+let sign = corrupt;
+let author = dissolve();
+let protocol = rebuild();
 
-// The sign is noise
-const message = identity();
-if (message.includes("noise")) {
-  console.log("Decode failure");
+if (meaning == denied) {
+    transmit(noise);
 } else {
-  console.log("Read as void");
+    hack(sign);
 }
 
-// end.`;
+// No logo. No brand. No message.
+return null;`;
     let i = 0;
-    const output = document.getElementById("output");
-
-    function typeChar() {
+    function typeWriter() {
       if (i < text.length) {
-        output.textContent += text.charAt(i);
+        document.getElementById("manifest").innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeChar, 20);
+        setTimeout(typeWriter, 30);
       }
     }
-    typeChar();
+    typeWriter();
   </script>
 </body>
 </html>

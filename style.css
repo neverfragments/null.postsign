@@ -1,46 +1,29 @@
 body {
-  margin: 0;
-  padding: 0;
   background: black;
-  color: white;
+  color: lime;
   font-family: monospace;
+  margin: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
-
 .terminal {
-  max-width: 800px;
-  width: 100%;
+  width: 90%;
+  max-width: 600px;
 }
-
-.logo {
-  color: lime;
-  font-weight: bold;
-  font-size: 1.5em;
-  margin-bottom: 1em;
-}
-
-.input-line {
-  display: flex;
-  align-items: center;
-}
-
-.prompt {
-  color: lime;
-  margin-right: 5px;
-}
-
-#commandInput {
+input {
   background: black;
+  color: lime;
   border: none;
   outline: none;
-  color: white;
-  font-family: monospace;
-  width: 100%;
+  font: inherit;
+  width: 80%;
 }
-
-.error {
-  color: red;
+.prompt {
+  display: flex;
+}
+#output {
+  white-space: pre-wrap;
+  margin-bottom: 0.5em;
 }
