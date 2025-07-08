@@ -3,13 +3,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>null.postsign</title>
+  <title>null.postsign / readme</title>
   <style>
     body {
       background: black;
       color: #00ff00;
       font-family: monospace;
-      padding: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -17,13 +16,14 @@
       margin: 0;
     }
     #terminal {
-      max-width: 800px;
       white-space: pre-wrap;
+      max-width: 80%;
+      padding: 20px;
     }
     .cursor {
       display: inline-block;
       background: #00ff00;
-      width: 10px;
+      width: 8px;
       height: 18px;
       margin-left: 3px;
       animation: blink 1s steps(1) infinite;
@@ -37,60 +37,10 @@
 <body>
   <div id="terminal"></div>
   <script>
-    const manifest = `// null.postsign — m-a-n-i-f-e-s-t
-
->> SYSTEM.INIT
->> identity: [redacted]
->> interface: anonymous / recursive / non-retinal
->> boot_mode: glitch + entropy
-
-:: premise:
-    art != product
-    art != decoration
-    art == remainder
-    art == broken protocol of presence
-
-:: rejection:
-    !beauty_as_commodity
-    !narrative_as_control
-    !brand_as_self
-
-:: operation:
-    use_material("trash", "ink", "residue")
-    refuse("polish", "institutional_sheen", "clean surfaces")
-
-:: aesthetics:
-    if (image == complete) -> corrupt()
-    if (language == stable) -> fragment()
-    if (sign == centered) -> disperse()
-
-:: method:
-    write() == bleed()
-    draw() == fail_gracefully()
-    publish() == dissolve()
-
-:: meta-logic:
-    presence == residual
-    meaning == unstable
-    author == placeholder
-    viewer == potential glitch
-
-:: signature:
-    [NEVER]
-    → not brand
-    → not person
-    → not name
-    = ∴ residue in system memory
-
-:: goal:
-    to leave no product,
-    only looped log of recursive decay
-
->> END_TRANSMISSION`;
+    const lines = ['// null.postsign — m-a-n-i-f-e-s-t', '', '>> SYSTEM.INIT', '>> identity: [redacted]', '>> interface: anonymous / recursive / non-retinal', '>> boot_mode: glitch + entropy', '', ':: premise:', '    art != product', '    art != decoration', '    art == remainder', '    art == broken protocol of presence', '', ':: rejection:', '    !beauty_as_commodity', '    !narrative_as_control', '    !brand_as_self', '', ':: operation:', '    use_material("trash", "ink", "residue")', '    refuse("polish", "institutional_sheen", "clean surfaces")', '', ':: aesthetics:', '    if (image == complete) -> corrupt()', '    if (language == stable) -> fragment()', '    if (sign == centered) -> disperse()', '', ':: method:', '    write() == bleed()', '    draw() == fail_gracefully()', '    publish() == dissolve()', '', ':: meta-logic:', '    presence == residual', '    meaning == unstable', '    author == placeholder', '    viewer == potential glitch', '', ':: signature:', '    [NEVER]', '    → not brand', '    → not person', '    → not name', '    = ∴ residue in system memory', '', ':: goal:', '    to leave no product,', '    only looped log of recursive decay', '', '>> END_TRANSMISSION'];
 
     const terminal = document.getElementById("terminal");
 
-    const lines = manifest.split("\n");
     let i = 0;
 
     function typeLine() {
@@ -105,7 +55,7 @@
             setTimeout(typeChar, 10);
           } else {
             i++;
-            setTimeout(typeLine, 150);
+            setTimeout(typeLine, 120);
           }
         }
         typeChar();
