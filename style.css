@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.terminal {
+  max-width: 800px;
+  width: 100%;
+}
+
+.logo {
+  color: lime;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  color: lime;
+  margin-right: 5px;
+}
+
+#commandInput {
+  background: black;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: monospace;
+  width: 100%;
+}
+
+.error {
+  color: red;
+}

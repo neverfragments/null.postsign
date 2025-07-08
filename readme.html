@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manifest</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #manifest {
+      white-space: pre-wrap;
+      color: white;
+      font-family: monospace;
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>
+  <div id="manifest"></div>
+  <script>
+    const text = `// null.postsign manifesto
+const subject = null
+const sign = undefined
+const origin = fragmented
+
+function intention(sign) {
+  return void 0
+}
+
+let message = []
+
+while(true) {
+  message.push(random_noise())
+  if (entropy > order) break
+}
+
+console.log("We do not decode. We disrupt.")
+console.log("We do not build systems. We dissolve them.")
+console.log("Meaning is residual. What remains is the trace.")`;
+
+    let i = 0;
+    const speed = 20;
+    const target = document.getElementById("manifest");
+
+    function type() {
+      if (i < text.length) {
+        target.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>

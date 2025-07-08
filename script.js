@@ -1,23 +1,30 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("commandInput");
+  const output = document.getElementById("output");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const input = document.getElementById("commandInput");
-    const output = document.getElementById("output");
+  function printOutput(text, cls = "") {
+    const div = document.createElement("div");
+    div.textContent = text;
+    if (cls) div.classList.add(cls);
+    output.appendChild(div);
+  }
 
-    input.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-            const command = input.value.trim();
-            output.innerHTML += `<div>&gt; ${command}</div>`;
-            input.value = "";
+  function handleCommand(command) {
+    switch (command.toLowerCase()) {
+      case "readme":
+        window.location.href = "readme.html";
+        break;
+      default:
+        printOutput("Unknown command: " + command, "error");
+    }
+  }
 
-            if (command === "digital") {
-                window.location.href = "pages/digital.html";
-            } else if (command === "print") {
-                window.location.href = "pages/print.html";
-            } else if (command === "calligraphy") {
-                window.location.href = "pages/calligraphy.html";
-            } else {
-                output.innerHTML += `<div style='color:red'>Unknown command: ${command}</div>`;
-            }
-        }
-    });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const command = input.value.trim();
+      printOutput("> " + command);
+      handleCommand(command);
+      input.value = "";
+    }
+  });
 });
