@@ -1,0 +1,17 @@
+
+body {
+    background-color: #000;
+    color: #00ff88;
+    font-family: monospace;
+    padding: 2em;
+}
+a {
+    color: #00ccff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.terminal {
+    white-space: pre-wrap;
+}
