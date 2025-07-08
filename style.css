@@ -1,29 +1,7 @@
+
 body {
   background: black;
   color: lime;
   font-family: monospace;
   margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.terminal {
-  width: 90%;
-  max-width: 600px;
-}
-input {
-  background: black;
-  color: lime;
-  border: none;
-  outline: none;
-  font: inherit;
-  width: 80%;
-}
-.prompt {
-  display: flex;
-}
-#output {
-  white-space: pre-wrap;
-  margin-bottom: 0.5em;
 }
