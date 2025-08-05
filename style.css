@@ -18,3 +18,10 @@ body {
 .error {
   color: red;
 }
+.ascii {
+  white-space: pre;
+  font-size: 11px;
+  line-height: 1.1em;
+  margin-bottom: 1em;
+  text-align: left;
+}
