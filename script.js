@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("commandInput");
   const output = document.getElementById("output");
@@ -12,6 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleCommand(command) {
     switch (command.toLowerCase()) {
+      case "postprint":
+        window.location.href = "postprint.html";
+        break;
+      case "postsign":
+        window.location.href = "postsign.html";
+        break;
+      case "larg_v01":
+        window.location.href = "larg_v01.html";
+        break;
       case "readme":
         window.location.href = "readme.html";
         break;
