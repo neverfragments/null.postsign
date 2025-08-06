@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
       case "readme":
         window.location.href = "readme.html";
         break;
+        case "bio":
+  window.location.href = "bio.html";
+  break;
       default:
         printOutput("Unknown command: " + command, "error");
     }
