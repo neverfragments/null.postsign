@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>postprint</title>
-  <style>
-    body { background: black; color: white; font-family: monospace; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 2rem; }
-    .gallery img { width: 100%; height: auto; border: 1px solid white; }
-  </style>
+ <style>
+  body { background: black; color: white; font-family: monospace; }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    gap: 1rem;
+    padding: 2rem;
+  }
+  .gallery img { width: 100%; height: auto; }
+</style>
 </head>
 <body>
   <h1>postprint //</h1>
@@ -27,5 +32,6 @@
   </div>
 </body>
 </html>
+
 
 
