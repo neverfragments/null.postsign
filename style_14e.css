@@ -3,17 +3,28 @@ body {
   color: white;
   font-family: monospace;
   margin: 0;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 img {
+  max-height: 60vh;
   max-width: 90vw;
-  max-height: 70vh;
   height: auto;
-  margin-bottom: 2rem;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
 }
+
 .caption {
   font-size: 1rem;
-  white-space: pre-line;
   color: #ccc;
+  text-align: center;
+  white-space: pre-line;
+  max-height: 30vh;
+  overflow: hidden;
 }
