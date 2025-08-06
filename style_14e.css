@@ -12,11 +12,8 @@ body {
 }
 
 img {
-  max-height: 60vh;
-  max-width: 90vw;
+  width: 300px; 
   height: auto;
-  width: auto;
-  object-fit: contain;
   margin-bottom: 1rem;
 }
 
