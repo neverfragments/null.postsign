@@ -9,28 +9,27 @@ document.addEventListener("DOMContentLoaded", () => {
     output.appendChild(div);
   }
 
-  function handleCommand(command) {
-    switch (command.toLowerCase()) {
-      case "postprint":
-        window.location.href = "postprint.html";
-        break;
-      case "postsign":
-        window.location.href = "postsign.html";
-        break;
-      case "larg_v01":
-        window.location.href = "larg_v01.html";
-        break;
-      case "readme":
-        window.location.href = "readme.html";
-        break;
-        case "bio":
-  window.location.href = "bio.html";
-  break;
-      default:
-        printOutput("Unknown command: " + command, "error");
-    }
+function handleCommand(command) {
+  switch (command.toLowerCase()) {
+    case "postprint":
+      window.location.href = "postprint.html";
+      break;
+    case "postsign":
+      window.location.href = "postsign.html";
+      break;
+    case "larg_v01":
+      window.location.href = "larg_v01.html";
+      break;
+    case "readme":
+      window.location.href = "readme.html";
+      break;
+    case "bio":
+      window.location.href = "bio.html";
+      break;
+    default:
+      printOutput("Unknown command: " + command, "error");
   }
-
+}
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       const command = input.value.trim();
